@@ -1,0 +1,114 @@
+<!-- Сайт розроблено студентом Ім'я Прізвище, група ХХ-Х-Х -->
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TravelWay — Туристичні тури</title>
+  <meta name="description" content="5–6 туристичних турів з цінами, бронюванням і підрахунком вартості на JavaScript." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="#home" class="logo">TravelWay</a>
+      <nav class="nav">
+        <a href="#home">Головна</a>
+        <a href="#tours">Тури</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>Відкривайте світ із <span>TravelWay</span></h1>
+        <p>Обирайте тур, обирайте дату — і бронюйте онлайн. Розрахунок вартості виконується на клієнті (JavaScript).</p>
+        <div class="author-badge">
+          <strong>Виконавець:</strong> <span class="author-name">Ім'я Прізвище</span> • <strong>Група:</strong> <span class="author-group">ХХ-Х-Х</span>
+        </div>
+        <a class="btn btn-primary" href="#tours">Перейти до турів</a>
+      </div>
+    </section>
+
+    <section id="tours" class="section">
+      <div class="container">
+        <h2>Популярні тури</h2>
+        <p class="muted">Натисніть «Забронювати», щоб обрати дату та кількість осіб. Підсумкова сума рахується автоматично.</p>
+        <div id="tour-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>Про TravelWay</h2>
+        <p>Ми створили демонстраційний навчальний сайт без серверної частини: усі дані зберігаються в масивах JavaScript, а обчислення виконуються на клієнті.</p>
+        <ul class="checklist">
+          <li>Чітка навігація та меню між секціями</li>
+          <li>5–6 турів із цінами та описами</li>
+          <li>Форма бронювання (дата + кількість осіб)</li>
+          <li>Розрахунок вартості на JavaScript</li>
+          <li>Автор і група вказані на головній та у футері</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Контакти</h2>
+        <p>Пишіть нам на <a href="mailto:travelway@example.com">travelway@example.com</a> або в соцмережах.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© <span id="year"></span> TravelWay. Навчальний проєкт. Автор: <strong class="author-name">Ім'я Прізвище</strong>, група <strong class="author-group">ХХ-Х-Х</strong>.</p>
+      <a href="#home" class="to-top">Нагору ↑</a>
+    </div>
+  </footer>
+
+  <!-- Діалог бронювання -->
+  <dialog id="bookingDialog">
+    <form method="dialog" class="booking-form" id="bookingForm">
+      <header>
+        <h3 id="dialogTitle">Бронювання туру</h3>
+        <button type="button" class="icon-btn" id="closeDialog" aria-label="Закрити">×</button>
+      </header>
+
+      <div class="booking-fields">
+        <div>
+          <label>Тур</label>
+          <input type="text" id="tourName" readonly />
+        </div>
+        <div>
+          <label for="date">Дата</label>
+          <input type="date" id="date" required />
+        </div>
+        <div>
+          <label for="people">Кількість осіб</label>
+          <input type="number" id="people" min="1" value="1" required />
+        </div>
+        <div>
+          <label>Ціна за особу</label>
+          <input type="text" id="pricePerPerson" readonly />
+        </div>
+        <div class="total">
+          <label>Підсумок</label>
+          <output id="totalPrice">₴0</output>
+        </div>
+      </div>
+
+      <menu>
+        <button value="cancel" class="btn">Скасувати</button>
+        <button id="confirmBtn" class="btn btn-primary" value="default">Підтвердити</button>
+      </menu>
+      <p class="muted xs">* Жодних платежів не здійснюється: це навчальна демонстрація без серверної частини.</p>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

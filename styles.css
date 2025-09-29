@@ -1,0 +1,49 @@
+/* Сайт розроблено студентом Ім'я Прізвище, група ХХ-Х-Х */
+:root{
+  --bg:#0b1220; --card:#121a2c; --muted:#9fb0d1; --text:#e8eefc; --brand:#7aa2ff; --brand-2:#9bffd1;
+  --accent:#ffd37a; --ok:#3ad29f; --danger:#ff7a7a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1220 0%,#0e1526 100%);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Ubuntu,Arial}
+a{color:var(--brand);text-decoration:none}
+.container{width:min(1100px,92%);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid #1f2941}
+.header-flex{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.logo{font-weight:800;letter-spacing:.4px}
+.nav a{margin-left:1rem;padding:.4rem .7rem;border-radius:.6rem}
+.nav a:hover{background:#1a2340}
+.hero{padding:7rem 0 4rem;background:radial-gradient(1200px 400px at 20% 0%,rgba(122,162,255,.2),transparent 60%)}
+.hero-inner h1{font-size:clamp(1.8rem,3.2vw,2.6rem);margin:0 0 .6rem}
+.hero-inner span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.author-badge{margin:1rem 0;padding:.6rem 1rem;border:1px dashed #2a3559;border-radius:.8rem;color:var(--muted)}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:.8rem;border:1px solid #2a3559;background:#111a2d;color:var(--text);cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#0b1220;border:none;font-weight:700}
+.section{padding:3rem 0}
+.section.alt{background:#0e172a}
+h2{margin-top:0}
+.muted{color:var(--muted)}
+.xs{font-size:.85rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1.2rem}
+.card{background:var(--card);border:1px solid #1c2743;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:160px;object-fit:cover;background:#0b1220}
+.card .body{padding:1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.price{font-weight:800}
+.tag{display:inline-block;font-size:.8rem;color:#0b1220;background:var(--accent);border-radius:.5rem;padding:.2rem .5rem;margin-left:.5rem}
+.card .footer{padding:1rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1c2743}
+.site-footer{border-top:1px solid #1f2941;background:#0b1220;padding:1rem 0;margin-top:2rem}
+.footer-flex{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.to-top{padding:.4rem .7rem;border:1px solid #2a3559;border-radius:.6rem}
+.checklist{display:grid;gap:.4rem;padding-left:1rem}
+.checklist li{list-style: '✓ ';padding-left:.3rem}
+
+/* Dialog & form */
+dialog{border:none;border-radius:1rem;max-width:560px;width:92%;padding:0;background:#0e172a;color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.booking-form header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1rem .5rem;border-bottom:1px solid #1c2743}
+.booking-form .booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem}
+.booking-form label{display:block;font-size:.9rem;color:var(--muted)}
+.booking-form input{width:100%;padding:.55rem .7rem;border-radius:.6rem;border:1px solid #293557;background:#0b1220;color:var(--text)}
+.booking-form .total{grid-column:1/-1;background:#101a31;border:1px solid #263356;border-radius:.8rem;padding:.8rem}
+.booking-form menu{display:flex;justify-content:flex-end;gap:.6rem;padding:0 1rem 1rem}
+.icon-btn{background:transparent;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer}
+@media (max-width:560px){.booking-form .booking-fields{grid-template-columns:1fr}}
